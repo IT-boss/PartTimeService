@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssmlearn.dao.IBaseUserDao">
+
+    <select id="selectBaseUserById" parameterType="long" resultType="BaseUser">
+        SELECT * FROM user u WHERE u.id=#{id}
+    </select>
+
+    <select id="selectBaseUserByName" parameterType="String" resultType="BaseUser">
+        SELECT * FROM user u WHERE u.username=#{name}
+    </select>
+
+</mapper>

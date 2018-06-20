@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="com.ssmlearn.dao.IUserDao">
+
+    <select id="selectUser" resultType="User" parameterType="long">
+        SELECT * FROM stu WHERE  stu_id = #{id}
+    </select>
+
+    <delete id="deleteUser" parameterType="String">
+        DELETE FROM stu WHERE stu_name = #{name} OR stu_id=#{name}
+    </delete>
+
+    <insert id="insertUser" parameterType="Map">
+       INSERT INTO stu (stu_id, stu_name) VALUES (#{userId},#{username})
+    </insert>
+
+</mapper>
